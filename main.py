@@ -14,34 +14,28 @@ Builder.load_string("""
     size_hint: .95, .95
     pos_hint: {'center_x': .5, 'center_y': .5}
     do_default_tab: False
-
     TabbedPanelItem:
         text: 'Selecione'
-
         GridLayout: 
 			id: glay
 			rows: 4
 			cols: 1
-			padding: 10
-			spacing: 10
+            padding: 10
+			spacing: 5
             Image:
-                pos: 200, 50
                 source: 'cripto.png'
                 size_hint: 0.3, 0.3
-
             Spinner:
 				id: coin
 				size_hint: 0.3, 0.3
 				text: 'Bitcoin'
 				values: 'Bitcoin','Cardano','Ethereum','xrp', 'dogecoin'
-				on_text:
-					print("The spinner {} has text {}".format(self, self.text))
             Button:
 			    id: consulta 
                 size_hint: 0.3, 0.3
-                pos_hint: {"x":0.5, "y":0.5}
+		        font_size: 36
                 background_color: [0, 0, 1, 1]
-                text: 'Consulta'
+                text: 'Consulte'
                 on_release: root.button_press()
             RstDocument:
 			    id: resultado 
@@ -53,9 +47,8 @@ Builder.load_string("""
             rows: 4
             cols: 1
             padding: 10
-            spacing: 10
+            spacing: 5
             Image:
-                pos: 200, 50
                 source: 'cripto.png'
                 size_hint: 0.3, 0.3
             TextInput:
@@ -66,7 +59,6 @@ Builder.load_string("""
             Button:
 			    id: bconsultaT 
                 size_hint: 0.3, 0.3
-                pos_hint: {"x":0.5, "y":0.5}
 		        font_size: 36
                 background_color: [0, 0, 1, 1]
                 text: 'Consulte'
@@ -74,26 +66,21 @@ Builder.load_string("""
             RstDocument:
                 id: resultadoT
 	            font_size: 24
-                text:
-                    '\\n'.join(("Cotacao", "-----------",
-                    "Digite a moeda."))
-
+                text: '\\n'.join(("Cotacao", "-----------", "Digite a moeda."))
     TabbedPanelItem:
         text: 'Ajuda'
         GridLayout:
             rows: 3
             cols: 1
             padding: 10
-            spacing: 10
+            spacing: 5
             Image:
-                pos: 200, 50
                 source: 'cripto.png'
-                size_hint: 0.2, 0.2
+                size_hint: 0.3, 0.3
             Label:
                 size_hint: 0.3, 0.3
                 background_color: [0, 0, 1, 1]
                 text: 'Al2 Software - 2021'
-
             RstDocument:
                 font_size: 24
                 text:
